@@ -59,7 +59,7 @@ namespace GmshNet
                 /// automatically. If `angle1' and `angle2' are specified, create a circle arc
                 /// between the two angles. Return the tag of the circle.
                 /// </summary>
-                public static int AddCircle(int x, int y, int z, int r, int tag = -1, double angle1 = 0, double angle2 = 2 * Math.PI)
+                public static int AddCircle(double x, double y, double z, double r, int tag = -1, double angle1 = 0, double angle2 = 2 * Math.PI)
                 {
                     var index = Gmsh_Warp.GmshModelOccAddCircle(x, y, z, r, tag, angle1, angle2, ref Gmsh._staticreff);
                     Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);

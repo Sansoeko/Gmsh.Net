@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -28,5 +28,10 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\UnsafeEx\UnsafeEx.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="gmsh-4.8.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
