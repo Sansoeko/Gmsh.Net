@@ -90,7 +90,7 @@ namespace GmshNet
                 /// minor radius (along the y-axis): rotate the shape or use `addCircle' in
                 /// such cases.
                 /// </summary>
-                public static int AddEllipse(int x, int y, int z, int r1, int r2, int tag = -1, double angle1 = 0, double angle2 = 2 * Math.PI)
+                public static int AddEllipse(double x, double y, double z, double r1, double r2, int tag = -1, double angle1 = 0, double angle2 = 2 * Math.PI)
                 {
                     var index = Gmsh_Warp.GmshModelOccAddEllipse(x, y, z, r1, r2, tag, angle1, angle2, ref Gmsh._staticreff);
                     Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
