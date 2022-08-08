@@ -226,8 +226,8 @@ namespace GmshNet
                     {
                         int* ptrss;
                         long outcount = 0;
-                        if (numElements == default) numElements = new int[0];
-                        if (heights == default) heights = new double[0];
+                        if (numElements == default) numElements = Array.Empty<int>();
+                        if (heights == default) heights = Array.Empty<double>();
                         Gmsh_Warp.GmshModelGeoExtrude(dimarray, dimarray.LongLength, dx, dy, dz, &ptrss, ref outcount, numElements, numElements.LongLength, heights, heights.LongLength, Convert.ToInt32(recombine), ref Gmsh._staticreff);
                         Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
 
@@ -252,8 +252,8 @@ namespace GmshNet
                     {
                         int* ptrss;
                         long outcount = 0;
-                        if (numElements == default) numElements = new int[0];
-                        if (heights == default) heights = new double[0];
+                        if (numElements == default) numElements = Array.Empty<int>();
+                        if (heights == default) heights = Array.Empty<double>();
                         Gmsh_Warp.GmshModelGeoRevolve(dimarray, dimarray.LongLength, x, y, z, ax, ay, az, angle, &ptrss, ref outcount, numElements, numElements.LongLength, heights, heights.LongLength, Convert.ToInt32(recombine), ref Gmsh._staticreff);
                         Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
                         var outDimTagsint = new int[outcount];
@@ -279,8 +279,8 @@ namespace GmshNet
                     {
                         int* ptrss;
                         long outcount = 0;
-                        if (numElements == default) numElements = new int[0];
-                        if (heights == default) heights = new double[0];
+                        if (numElements == default) numElements = Array.Empty<int>();
+                        if (heights == default) heights = Array.Empty<double>();
                         Gmsh_Warp.GmshModelGeoTwist(dimarray, dimarray.LongLength, x, y, z, dx, dy, dz, ax, ay, az, angle, &ptrss, ref outcount, numElements, numElements.LongLength, heights, heights.LongLength, Convert.ToInt32(recombine), ref Gmsh._staticreff);
 
                         var array = UnsafeHelp.ToIntArray(ptrss, outcount);

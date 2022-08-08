@@ -120,9 +120,9 @@ namespace GmshNet
                 /// </summary>
                 public static int AddBSpline(int[] pointTags, int tag = -1, int degree = 3, double[] weights = default, double[] knots = default, int[] multiplicities = default)
                 {
-                    if (weights == default) weights = new double[0];
-                    if (knots == default) knots = new double[0];
-                    if (multiplicities == default) multiplicities = new int[0];
+                    if (weights == default) weights = Array.Empty<double>();
+                    if (knots == default) knots = Array.Empty<double>();
+                    if (multiplicities == default) multiplicities = Array.Empty<int>();
                     var index = Gmsh_Warp.GmshModelOccAddBSpline(pointTags, pointTags.LongLength, tag, degree,
                         weights, weights.LongLength,
                         knots, knots.LongLength,
@@ -220,7 +220,7 @@ namespace GmshNet
                 /// </summary>
                 public static int AddSurfaceFilling(int wireTag, int tag = -1, int[] pointTags = default)
                 {
-                    if (pointTags == default) pointTags = new int[0];
+                    if (pointTags == default) pointTags = Array.Empty<int>();
                     var index = Gmsh_Warp.GmshModelOccAddSurfaceFilling(wireTag, tag, pointTags, pointTags.LongLength, ref Gmsh._staticreff);
                     Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
                     return index;
@@ -274,12 +274,12 @@ namespace GmshNet
                     double[] weights = default, double[] knotsU = default, double[] knotsV = default, int[] multiplicitiesU = default, int[] multiplicitiesV = default, 
                     int[] wireTags = default, bool wire3D = false)
                 {
-                    if (weights == default) weights = new double[0];
-                    if (knotsU == default) knotsU = new double[0];
-                    if (knotsV == default) knotsV = new double[0];
-                    if (multiplicitiesU == default) multiplicitiesU = new int[0];
-                    if (multiplicitiesV == default) multiplicitiesV = new int[0];
-                    if (wireTags == default) wireTags = new int[0];
+                    if (weights == default) weights = Array.Empty<double>();
+                    if (knotsU == default) knotsU = Array.Empty<double>();
+                    if (knotsV == default) knotsV = Array.Empty<double>();
+                    if (multiplicitiesU == default) multiplicitiesU = Array.Empty<int>();
+                    if (multiplicitiesV == default) multiplicitiesV = Array.Empty<int>();
+                    if (wireTags == default) wireTags = Array.Empty<int>();
                     var index = Gmsh_Warp.GmshModelOccAddBSplineSurface(
                         pointTags, pointTags.LongLength,
                         numPointsU, tag, degreeU, degreeV,
@@ -303,7 +303,7 @@ namespace GmshNet
                 /// </summary>
                 public static int AddBezierSurface(int[] pointTags, int numPointsU, int tag = -1, int[] wireTags = default, bool wire3D = false)
                 {
-                    if (wireTags == default) wireTags = new int[0];
+                    if (wireTags == default) wireTags = Array.Empty<int>();
 
                     var index = Gmsh_Warp.GmshModelOccAddBezierSurface(pointTags, pointTags.LongLength, numPointsU, tag, wireTags, 
                                                                       wireTags.LongLength, Convert.ToInt32(wire3D), ref Gmsh._staticreff);
@@ -487,8 +487,8 @@ namespace GmshNet
                 {
                     unsafe
                     {
-                        if (numElements == default) numElements = new int[0];
-                        if (heights == default) heights = new double[0];
+                        if (numElements == default) numElements = Array.Empty<int>();
+                        if (heights == default) heights = Array.Empty<double>();
                         var dimTags_array = dimTags.ToIntArray();
 
                         int* outDimTags_ptr;
@@ -518,8 +518,8 @@ namespace GmshNet
                 {
                     unsafe
                     {
-                        if (numElements == default) numElements = new int[0];
-                        if (heights == default) heights = new double[0];
+                        if (numElements == default) numElements = Array.Empty<int>();
+                        if (heights == default) heights = Array.Empty<double>();
                         var dimTags_array = dimTags.ToIntArray();
 
                         int* outDimTags_ptr;

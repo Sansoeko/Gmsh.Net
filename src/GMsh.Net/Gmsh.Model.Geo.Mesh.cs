@@ -49,7 +49,7 @@ namespace GmshNet
                     /// </summary>
                     public static void SetTransfiniteSurface(int tag, string arrangement = "Left", int[] cornerTags = default)
                     {
-                        if (cornerTags == default) cornerTags = new int[0];
+                        if (cornerTags == default) cornerTags = Array.Empty<int>();
                         Gmsh_Warp.GmshModelGeoMeshSetTransfiniteSurface(tag, arrangement, cornerTags, cornerTags.LongLength, ref Gmsh._staticreff);
                         Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
                     }
@@ -61,7 +61,7 @@ namespace GmshNet
                     /// </summary>
                     public static void SetTransfiniteVolume(int tag, int[] cornerTags = default)
                     {
-                        if (cornerTags == default) cornerTags = new int[0];
+                        if (cornerTags == default) cornerTags = Array.Empty<int>();
                         Gmsh_Warp.GmshModelGeoMeshSetTransfiniteVolume(tag, cornerTags, cornerTags.LongLength, ref Gmsh._staticreff);
                         Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
                     }

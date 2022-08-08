@@ -269,9 +269,9 @@ namespace GmshNet
                 {
                     double* value_ptr;
                     long value_n = 0;
-                    if (xElemCoord == default) xElemCoord = new double[0];
-                    if (yElemCoord == default) yElemCoord = new double[0];
-                    if (zElemCoord == default) zElemCoord = new double[0];
+                    if (xElemCoord == default) xElemCoord = Array.Empty<double>();
+                    if (yElemCoord == default) yElemCoord = Array.Empty<double>();
+                    if (zElemCoord == default) zElemCoord = Array.Empty<double>();
                     Gmsh_Warp.GmshViewProbe(tag, x, y, z, &value_ptr, ref value_n, step, numComp, Convert.ToInt32(gradient), tolerance, xElemCoord, xElemCoord.LongLength, yElemCoord, yElemCoord.LongLength, zElemCoord, zElemCoord.LongLength, dim, ref Gmsh._staticreff);
                     var value = UnsafeHelp.ToDoubleArray(value_ptr, value_n);
                     Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);

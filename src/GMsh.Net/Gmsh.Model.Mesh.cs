@@ -275,7 +275,7 @@ namespace GmshNet
                 /// </summary>
                 public static void AddNodes(int dim, int tag, long[] nodeTags, double[] coord, double[] parametricCoord = default)
                 {
-                    if (parametricCoord == default) parametricCoord = new double[0];
+                    if (parametricCoord == default) parametricCoord = Array.Empty<double>();
                     Gmsh_Warp.GmshModelMeshAddNodes(dim, tag, nodeTags, nodeTags.LongLength, coord, coord.LongLength, parametricCoord, parametricCoord.LongLength, ref Gmsh._staticreff);
                     Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
                 }
@@ -712,7 +712,7 @@ namespace GmshNet
                         long basisFunctions_n = 0;
                         numComponents = 0;
                         numOrientations = 0;
-                        if (wantedOrientations == default) wantedOrientations = new int[0];
+                        if (wantedOrientations == default) wantedOrientations = Array.Empty<int>();
                         Gmsh_Warp.GmshModelMeshGetBasisFunctions(elementType, localCoord, localCoord.LongLength,
                             functionSpaceType, ref numComponents, &basisFunctions_ptr, ref basisFunctions_n, ref numOrientations,
                             wantedOrientations, wantedOrientations.LongLength,
@@ -1050,7 +1050,7 @@ namespace GmshNet
                 /// </summary>
                 public static void SetTransfiniteSurface(int tag, string arrangement = "Left", int[] cornerTags = default)
                 {
-                    if (cornerTags == default) cornerTags = new int[0];
+                    if (cornerTags == default) cornerTags = Array.Empty<int>();
                     Gmsh_Warp.GmshModelMeshSetTransfiniteSurface(tag, arrangement, cornerTags, cornerTags.LongLength, ref Gmsh._staticreff);
                     Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
                 }
@@ -1062,7 +1062,7 @@ namespace GmshNet
                 /// </summary>
                 public static void SetTransfiniteVolume(int tag, int[] cornerTags = default)
                 {
-                    if (cornerTags == default) cornerTags = new int[0];
+                    if (cornerTags == default) cornerTags = Array.Empty<int>();
                     Gmsh_Warp.GmshModelMeshSetTransfiniteVolume(tag, cornerTags, cornerTags.LongLength, ref Gmsh._staticreff);
                     Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
                 }

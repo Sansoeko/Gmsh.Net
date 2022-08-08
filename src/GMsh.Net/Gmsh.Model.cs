@@ -277,7 +277,7 @@ namespace GmshNet
             /// </summary>
             public static void AddDiscreteEntity(int dim, int tag, int[] boundary = default)
             {
-                if (boundary == default) boundary = new int[0];
+                if (boundary == default) boundary = Array.Empty<int>();
                 Gmsh_Warp.GmshModelAddDiscreteEntity(dim, tag, boundary, boundary.LongLength, ref Gmsh._staticreff);
                 Gmsh.CheckException(MethodBase.GetCurrentMethod().MethodHandle);
             }
